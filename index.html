@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+  <head>
+
+    <title>Rock, Paper, Scissors vs Code</title>
+
+  </head>
+  <style>
+div{text-align: center;}
+body {background-color: rgb(45, 113, 214);}
+  </style>
+
+
+<div>
+      <h1>Rock, Paper, Scissors vs Code</h1>
+      <h2> Your score </h2>
+      <h3 id="YourScore">0</h3>
+      <h2> Computer score </h2>
+      <h3 id="CompScore">0</h3>
+      <button onclick="Play(0)">Rock</button>
+      <button onclick="Play(1)">Paper</button>
+      <button onclick="Play(2)">Scissors</button>
+     <br>
+      <h2 id="CompChose"></h2>
+      <h1 id="Results"></h1>
+
+<div>
+
+
+      <script>
+        function Play(hand) {
+          Computer = Math.floor(Math.random() * 3)
+          console.log(Computer)
+          console.log(hand)
+          
+          if (Computer== 0){
+            document.getElementById("CompChose").innerHTML = "Computer picked Rock"
+          }
+          
+          if (Computer== 1){
+            document.getElementById("CompChose").innerHTML = "Computer picked Paper"
+          }
+           
+          if (Computer== 2){
+            document.getElementById("CompChose").innerHTML = "Computer picked Scissors"
+          }
+
+          if (hand == Computer) {
+            document.getElementById("Results").innerHTML = "You Tie"
+            console.log("You Tie")
+          }
+          if (hand == 0 && Computer == 1) {
+            document.getElementById("Results").innerHTML = "You Lose"
+            console.log("You Lose") 
+            Score = document.getElementById("CompScore").innerHTML
+            console.log(Score++)
+            document.getElementById("CompScore").innerHTML=Score++
+          }
+          if (hand == 0 && Computer == 2) {
+            document.getElementById("Results").innerHTML = "You Win"
+            console.log("You Win")
+            Score = document.getElementById("YourScore").innerHTML
+            console.log(Score++)
+            document.getElementById("YourScore").innerHTML=Score++
+          }
+          if (hand == 1 && Computer == 0) {
+            document.getElementById("Results").innerHTML = "You Win"
+            console.log("You Win")
+            Score = document.getElementById("YourScore").innerHTML
+            console.log(Score++)
+            document.getElementById("YourScore").innerHTML=Score++
+          }
+          if (hand == 1 && Computer == 2) {
+            document.getElementById("Results").innerHTML = "You Lose"
+            console.log("You Lose")
+            Score = document.getElementById("CompScore").innerHTML
+            console.log(Score++)
+            document.getElementById("CompScore").innerHTML=Score++
+          }
+          if (hand == 2 && Computer == 0) {
+            document.getElementById("Results").innerHTML = "You Lose"
+            console.log("You Lose")
+            Score = document.getElementById("CompScore").innerHTML
+            console.log(Score++)
+            document.getElementById("CompScore").innerHTML=Score++
+          }
+          if (hand == 2 && Computer == 1) {
+            document.getElementById("Results").innerHTML = "You Win"
+            console.log("You Win")
+            Score = document.getElementById("YourScore").innerHTML
+            console.log(Score++)
+            document.getElementById("YourScore").innerHTML=Score++
+          }
+        }
+ 
+      </script>
+
+
+</body>
+
+</html>
